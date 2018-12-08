@@ -13,7 +13,7 @@ func NoticiasHoy(feed *gf.Feed,context context.Context, request *alexa.Request, 
 
 	result := cfg.SpeechBeginNoticias
 	for _,val := range feed.Items{
-		result += val.Title + " . "
+		result += val.Title + ". "
 
 	}
 	response.SetStandardCard(cfg.CardTitle, result, cfg.ImageSmall, cfg.ImageLong)

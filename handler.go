@@ -68,6 +68,7 @@ func (h *Mostoles) OnIntent(context context.Context, request *alexa.Request, ses
 	default:
 		log.Println("Entra por default Intent")
 		f.Navigate(context, request, session, aContext, response)
+		response.ShouldSessionEnd = true
 	}
 	log.Println("antes del nil onlaunch")
 	return nil
