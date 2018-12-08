@@ -36,7 +36,7 @@ func (h *Mostoles) OnSessionStarted(context context.Context, request *alexa.Requ
 func (h *Mostoles) OnLaunch(context context.Context, request *alexa.Request, session *alexa.Session, aContext *alexa.Context, response *alexa.Response) error {
 	log.Printf("OnLaunch requestId=%s, sessionId=%s", request.RequestID, session.SessionID)
 
-	response.SetStandardCard(cfg.CardTitle, cfg.SpeechOnLaunch + feed.Title + cfg.SpeechQuestion, cfg.ImageSmall, cfg.ImageLong)
+	response.SetStandardCard(cfg.CardTitle, cfg.SpeechOnLaunch + feed.Description + cfg.SpeechQuestion, cfg.ImageSmall, cfg.ImageLong)
 	response.SetOutputText(cfg.SpeechOnLaunch + feed.Title + cfg.SpeechQuestion)
 
 	response.ShouldSessionEnd = false
