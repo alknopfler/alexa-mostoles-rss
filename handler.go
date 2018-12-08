@@ -37,7 +37,7 @@ func (h *Mostoles) OnLaunch(context context.Context, request *alexa.Request, ses
 	log.Printf("OnLaunch requestId=%s, sessionId=%s", request.RequestID, session.SessionID)
 
 	response.SetStandardCard(cfg.CardTitle, cfg.SpeechOnLaunch + feed.Description + cfg.SpeechQuestion, cfg.ImageSmall, cfg.ImageLong)
-	response.SetOutputText(cfg.SpeechOnLaunch + feed.Title + cfg.SpeechQuestion)
+	response.SetOutputText(cfg.SpeechOnLaunch + feed.Description + cfg.SpeechQuestion)
 
 	response.ShouldSessionEnd = false
 	response.SetRepromptText(cfg.SpeechNavigate)
